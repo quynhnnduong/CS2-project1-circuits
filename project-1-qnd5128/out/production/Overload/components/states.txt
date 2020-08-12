@@ -1,0 +1,39 @@
+Appliance and CircuitBreaker
+switch on:
+switchOn engaged action
+0        0       switchOn = 1
+0        1       switchOn = 1, draw power/engage load
+1        0       do nothing
+1        1       do nothing
+
+switch off:
+switchOn engaged action
+0        0       do nothing
+0        1       do nothing
+1        0       switchOn = 0
+1        1       switchOn = 0, withdraw power/disengage
+
+engage:
+switchOn engaged action
+0        0       engaged = 1
+0        1       do nothing
+1        0       engaged = 1, draw from source/engage load
+1        1       do nothing
+
+disengage:
+switchOn engaged action
+0        0       do nothing
+0        1       engaged = 0
+1        0       do nothing
+1        1       engaged = 0, withdraw power/disengage load
+
+Outlet
+engage:
+engaged action
+0       engaged = 1, engage all load
+1       do nothing
+
+disengage:
+engaged action
+0       do nothing
+1       engaged = 0, disengage all load
